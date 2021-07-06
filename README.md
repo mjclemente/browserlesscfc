@@ -51,7 +51,7 @@ Once you have this, you can provide it to this wrapper manually when creating th
 
 ### Reference Manual
 
-#### `screenshot( any options="[runtime expression]", struct flags="[runtime expression]"  )`
+#### `screenshot( required any options, struct flags={} )`
 
 Take a screenshot. The parameter `options` expects an instance of the `helpers.screenshot` component, but you can construct the struct/json yourself if you prefer. Additionally, for flexibility, you can simply pass in a url. *[Endpoint docs](https://chrome.browserless.io/docs/#/Browser%20API/post_screenshot)*
 

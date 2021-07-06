@@ -53,7 +53,7 @@ component displayname="browserlesscfc"  {
     * @hint Take a screenshot
     * @options expects an instance of the `helpers.screenshot` component, but you can construct the struct/json yourself if you prefer. Additionally, for flexibility, you can simply pass in a url.
     */
-    public struct function screenshot( any options = {}, struct flags = {} ) {
+    public struct function screenshot( required any options, struct flags = {} ) {
       var payload = {};
 
       if( isSimpleValue( arguments.options ) ){
