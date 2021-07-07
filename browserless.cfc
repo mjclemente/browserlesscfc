@@ -5,7 +5,7 @@
 */
 component displayname="browserlesscfc"  {
 
-    variables._browserlesscfc_version = '0.0.0';
+    variables._browserlesscfc_version = '0.5.0';
 
     public any function init(
         string apiKey = '',
