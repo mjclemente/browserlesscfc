@@ -8,20 +8,26 @@ component accessors="true" {
   property name="authenticate" default="";
   property name="addScriptTag" default="";
   property name="addStyleTag" default="";
+  property name="bestAttempt" default="";
   property name="cookies" default="";
+  property name="emulateMediaType" default="";
   property name="gotoOptions" default="";
   property name="html" default="";
-  property name="manipulate" default="";
   property name="options" default="";
   property name="rejectRequestPattern" default="";
   property name="rejectResourceTypes" default="";
   property name="requestInterceptors" default="";
+  property name="scrollPage" default="";
+  property name="selector" default="";
   property name="setExtraHTTPHeaders" default="";
   property name="setJavaScriptEnabled" default="";
   property name="url" default="";
   property name="userAgent" default="";
   property name="viewport" default="";
-  property name="waitFor" default="";
+  property name="waitForEvent" default="";
+  property name="waitForFunction" default="";
+  property name="waitForSelector" default="";
+  property name="waitForTimeout" default="";
 
   /**
   * @hint No parameters can be passed to init this component. They must be built manually.
@@ -33,7 +39,6 @@ component accessors="true" {
     setAddStyleTag( [] );
     setCookies( [] );
     setGotoOptions( {} );
-    setManipulate( {} );
     setOptions( {} );
     setRejectRequestPattern( [] );
     setRejectResourceTypes( [] );

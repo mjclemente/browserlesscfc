@@ -9,7 +9,7 @@ component displayname="browserlesscfc"  {
 
     public any function init(
         string apiKey = '',
-        string baseUrl = "https://chrome.browserless.io",
+        string baseUrl = "https://production-sfo.browserless.io",
         boolean includeRaw = false,
         numeric httpTimeout = 50
     ) {
@@ -66,7 +66,7 @@ component displayname="browserlesscfc"  {
         payload.append( arguments.options );
       }
 
-      return apiCall( 'POST', '/screenshot', arguments.flags, payload );
+      return apiCall( 'POST', '/chrome/screenshot', arguments.flags, payload );
     }
 
     // PRIVATE FUNCTIONS
@@ -82,7 +82,7 @@ component displayname="browserlesscfc"  {
         var requestHeaders = getBaseHttpHeaders();
         requestHeaders.append( headers, true );
 
-        queryParams["token"] = variables.apiKey;
+        // queryParams["token"] = variables.apiKey;
 
         var requestStart = getTickCount();
         var apiResponse = makeHttpRequest( httpMethod = httpMethod, path = fullApiPath, queryParams = queryParams, headers = requestHeaders, payload = payload );
@@ -130,8 +130,9 @@ component displayname="browserlesscfc"  {
         return {
             'Accept' : 'application/json',
             'Content-Type' : 'application/json',
-            'User-Agent' : 'browserlesscfc/#variables._browserlesscfc_version# (ColdFusion)',
-            'Cache-Control': 'no-cache'
+            'User-Agent' : 'browserlesscfc/#variables._browserlesscfc_version# (CFML)',
+            'Cache-Control': 'no-cache',
+            "Authorization": "Basic #ToBase64(variables.apiKey)#"
         };
     }
 
